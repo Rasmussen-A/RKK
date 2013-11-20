@@ -13,7 +13,10 @@ require.config({
     underscore: { exports: '_' },
     backbone: {
       deps: ['jquery', 'underscore'],
-      exports: 'Backbone' }
+      exports: 'Backbone' },
+    bootstrap: {
+      deps: ['jquery'],
+      exports: 'Bootstrap' }
   }
 });
 
