@@ -1,0 +1,5 @@
+body, html { background-color: rgb(231, 231, 231) }
+
+.well { background-color: white !important; box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1); }
+
+.nav li .glyphicon { margin-right: 5px }
