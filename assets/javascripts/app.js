@@ -3,9 +3,11 @@
 define(['jquery',
        'underscore',
        'backbone',
-       'bootstrap'],
-  function($, _, Backbone, Bootstrap) {
-  	$('.navbar-nav a[href="#"]').tab('show')
+       'bootstrap',
+       'routers/nav'],
+  function($, _, Backbone, Bootstrap, NavRouter) {
   	$('body > .container').height( $(window).height() - 90 )
+  	var navigation = new NavRouter.Nav()
+  		Backbone.history.start()
   }
 )
