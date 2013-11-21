@@ -1,11 +1,11 @@
 define(['jquery',
 		'underscore',
 		'backbone',
-		'text!templates/index.html'],
+		'text!templates/about.html'],
 	function($, _, Backbone, indexTemplate){
-		Index = Backbone.View.extend({
+		About = Backbone.View.extend({
 			template: _.template(indexTemplate),
 			initialize: function() {
 				this.$el.html(this.template()) } })
-		return { Index: Index }
+		return { About: About }
 	})

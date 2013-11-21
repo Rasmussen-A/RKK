@@ -2,8 +2,9 @@ define(['jquery',
         'underscore',
         'backbone',
         'views/index',
+        'views/about',
         'text!templates/contacts.html'],
-  function($, _, Backbone, indexView, contactsTemplate) {
+  function($, _, Backbone, indexView, aboutView, contactsTemplate) {
 
     Nav = Backbone.Router.extend({
       routes: {
@@ -12,35 +13,34 @@ define(['jquery',
         "service": "service",
         "shop": "shop",
         "order": "order", 
-    	"*actions": "index" },
+      	"*actions": "index" },
 
-      initialize: function() {
+      initialize: function(el) {
         // Render contacts templates and activate popover
         $("#info").html(_.template(contactsTemplate))
         $('#contacts').popover()
+        this.$el = el
       },
 
       index: function() {
 	  	$('.navbar-nav a[href="#"]').tab('show')
-	  	var index_view = new indexView.Index()
-	  		index_view.render() },
+	  	var index_view = new indexView.Index({el: this.$el}) },
 
       about: function() {
 	  	$('.navbar-nav a[href="#about"]').tab('show')
-	  	$('#content').empty() },
+	  	var about_view = new aboutView.About({el: this.$el}) },
 
       service: function() {
 	  	$('.navbar-nav a[href="#service"]').tab('show')
-	  	$('#content').empty() },
+	  	this.$el.empty() },
 
       shop: function() {
 	  	$('.navbar-nav a[href="#shop"]').tab('show')
-	  	$('#content').empty() },
+	  	this.$el.empty() },
 
       order: function() {
 	  	$('.navbar-nav a[href="#order"]').tab('show')
-	  	$('#content').empty() } })
+	  	this.$el.empty() } })
 
     return { Nav: Nav }
-  }
-)
+  })
