@@ -13,8 +13,6 @@
     <!-- Local css -->
     <link rel="stylesheet" type="text/css"
       href='assets/stylesheets/main.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css"
-      href='vendor/stylesheets/jquery.jscrollpane.css' rel='stylesheet'>
 
     <!-- Loading backbone throught require.js -->
     <script data-main='assets/javascripts/main' src='vendor/javascripts/require.js'></script>
@@ -22,7 +20,7 @@
 
   <body>
 
-    <nav class='navbar navbar-default' role='navigation'>
+    <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
       <div class='container'>
         <a class="navbar-brand" href="#">
           <img src='assets/images/logo.png' />
@@ -41,15 +39,7 @@
             <span class='glyphicon glyphicon-list-alt'></span>Заказ</a></li>
         </ul>
 
-        <div class='navbar-text pull-right'>
-          <span class='glyphicon glyphicon-earphone' rel='popover' id='contacts' 
-          data-content="
-            <p>Санкт-Петербург</p>
-            <p>Тел.: 8 (812) 000-00-00</p>
-            <p>E-mail: acme@inc.org</p>" 
-          data-original-title="Контакты" data-placement='bottom' data-html='true'>
-          </span>
-        </div>
+        <div class='navbar-text pull-right' id='info'></div>
       </div>
     </nav>
 

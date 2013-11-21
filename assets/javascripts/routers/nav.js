@@ -1,8 +1,9 @@
 define(['jquery',
         'underscore',
         'backbone',
-        'views/index'],
-  function($, _, Backbone, indexView) {
+        'views/index',
+        'text!templates/contacts.html'],
+  function($, _, Backbone, indexView, contactsTemplate) {
 
     Nav = Backbone.Router.extend({
       routes: {
@@ -12,6 +13,12 @@ define(['jquery',
         "shop": "shop",
         "order": "order", 
     	"*actions": "index" },
+
+      initialize: function() {
+        // Render contacts templates and activate popover
+        $("#info").html(_.template(contactsTemplate))
+        $('#contacts').popover()
+      },
 
       index: function() {
 	  	$('.navbar-nav a[href="#"]').tab('show')
