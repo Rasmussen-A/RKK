@@ -1,10 +1,10 @@
 define(['jquery',
         'underscore',
         'backbone',
-        'views/index',
-        'views/about',
         'text!templates/contacts.html'],
-  function($, _, Backbone, indexView, aboutView, contactsTemplate) {
+  function($, _, Backbone, contactsTemplate) {
+    // Where to render content
+    var target = undefined
 
     Nav = Backbone.Router.extend({
       routes: {
@@ -19,28 +19,30 @@ define(['jquery',
         // Render contacts templates and activate popover
         $("#info").html(_.template(contactsTemplate))
         $('#contacts').popover()
-        this.$el = el
+        target = el
       },
 
       index: function() {
-	  	$('.navbar-nav a[href="#"]').tab('show')
-	  	var index_view = new indexView.Index({el: this.$el}) },
+  	  	$('.navbar-nav a[href="#"]').tab('show')
+        require(['views/index'], 
+          function(indexView){ var index = new indexView.Index({el: target}) }) },
 
       about: function() {
-	  	$('.navbar-nav a[href="#about"]').tab('show')
-	  	var about_view = new aboutView.About({el: this.$el}) },
+  	  	$('.navbar-nav a[href="#about"]').tab('show')
+  	  	require(['views/about'],
+          function(aboutView){ var about = new aboutView.About({el: target}) }) },
 
       service: function() {
-	  	$('.navbar-nav a[href="#service"]').tab('show')
-	  	this.$el.empty() },
+  	  	$('.navbar-nav a[href="#service"]').tab('show')
+  	  	target.empty() },
 
       shop: function() {
-	  	$('.navbar-nav a[href="#shop"]').tab('show')
-	  	this.$el.empty() },
+  	  	$('.navbar-nav a[href="#shop"]').tab('show')
+  	  	target.empty() },
 
       order: function() {
-	  	$('.navbar-nav a[href="#order"]').tab('show')
-	  	this.$el.empty() } })
+  	  	$('.navbar-nav a[href="#order"]').tab('show')
+  	  	target.empty() } })
 
     return { Nav: Nav }
   })
