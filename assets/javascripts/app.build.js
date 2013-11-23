@@ -1,17 +1,13 @@
 ({
     appDir: "../../",
     baseUrl: "assets/javascripts/",
-    dir: "../../../RKK-Deploy",
+    fileExclusionRegExp: /.git/,
+    dir: "../../../RKK-Deploy/public_html/",
     paths: {
         jquery: "empty:",
         underscore: "empty:",
         backbone: "empty:",
         bootstrap: "empty:",
-        templates: "../templates"
-    },
-    modules: [
-        {
-            name: "main"
-        }
-    ]
-})
+        leaflet: "empty:",
+        templates: "../templates" },
+    modules: [{ name: "main" }] })

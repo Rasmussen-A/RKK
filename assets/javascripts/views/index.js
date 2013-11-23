@@ -6,6 +6,7 @@ define(['jquery',
 		Index = Backbone.View.extend({
 			template: _.template(indexTemplate),
 			initialize: function() {
-				this.$el.html(this.template()) } })
+				this.$el.html(this.template())
+		  	  	$('.navbar-nav a[href="#"]').tab('show') } })
 		return { Index: Index }
 	})

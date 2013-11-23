@@ -6,6 +6,7 @@ require.config({
     underscore: 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min',
     backbone: 'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min',
     bootstrap: 'https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min',
+    leaflet: 'http://cdn.leafletjs.com/leaflet-0.7/leaflet',
     templates: '../templates'
   },
   shim: {
@@ -16,7 +17,8 @@ require.config({
       exports: 'Backbone' },
     bootstrap: {
       deps: ['jquery'],
-      exports: 'Bootstrap' }
+      exports: 'Bootstrap' },
+    leaflet: { exports: 'L' }
   }
 });
 

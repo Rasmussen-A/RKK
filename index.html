@@ -9,13 +9,14 @@
     <!-- CDN css -->
     <link rel="stylesheet" media='screen'
       href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
 
     <!-- Local css -->
     <link rel="stylesheet" type="text/css"
       href='assets/stylesheets/main.css' rel='stylesheet'>
 
     <!-- Loading backbone throught require.js -->
-    <script data-main='assets/javascripts/main-built' src='vendor/javascripts/require.js'></script>
+    <script data-main='assets/javascripts/main' src='vendor/javascripts/require.js'></script>
   </head>
 
   <body>
@@ -33,9 +34,9 @@
             <span class='glyphicon glyphicon-briefcase'></span>О компании</a></li>
           <li><a href='#service'>
             <span class='glyphicon glyphicon-wrench'></span>Сервис</a></li>
-          <li><a href='#shop'>
+          <li class='disabled'><a>
             <span class='glyphicon glyphicon-shopping-cart'></span>Каталог</a></li>
-          <li><a href='#order'>
+          <li class='disabled'><a>
             <span class='glyphicon glyphicon-list-alt'></span>Заказ</a></li>
         </ul>
 

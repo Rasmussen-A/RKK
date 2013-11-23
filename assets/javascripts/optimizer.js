@@ -7,6 +7,7 @@
         underscore: "empty:",
         backbone: "empty:",
         bootstrap: "empty:",
+        leaflet: "empty:",
         templates: "../templates"
     },
     name: "main",
