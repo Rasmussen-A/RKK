@@ -2,6 +2,7 @@
     appDir: "../../",
     baseUrl: "assets/javascripts/",
     fileExclusionRegExp: /.git/,
+    fileExclusionRegExp: /deploy.js/,
     dir: "../../../RKK-Deploy/public_html/",
     paths: {
         jquery: "empty:",
